@@ -1,0 +1,148 @@
+author = "Alberto Rufier";
+onLoadName = "Cazapatos Rufier.";
+OnLoadMission = "let's rock!";
+disabledAI = true;
+#include "defines.hpp"
+
+#include "dialogs.hpp"
+
+/*
+0 = Global
+1 = Side
+2 = Command
+3 = Group
+4 = Vehicle
+5 = Direct
+6 = System
+*/
+disableChannels[]={2,6};
+#include "voiceControl.cpp"
+Saving=0;
+
+
+
+
+// Control types
+#define CT_STATIC           0
+#define CT_MAP_MAIN         101
+
+// Static styles
+#define ST_CENTER         0x02
+#define ST_PICTURE        0x30
+
+class RscTitles 
+{
+  #include "UI\defines.hpp"  
+};
+
+
+
+class CfgSounds {
+    sounds[] = {};
+    class sirenLong {
+        name = "sirenLong";
+        sound[] = {"\sounds\sirenLong.ogg", 1.0, 1};
+        titles[] = {};
+    };
+class akbar
+    {
+        name = "akbar";
+        sound[] = {"\sounds\akbar.ogg",1.0, 1};
+        titles[] = {};
+    };
+class Yelp {
+		name = "yelp";
+		sound[] = {"\sounds\Yelp.ogg", 1.0, 1};
+		titles[] = {};
+	};
+	
+	class Welcome {
+        name = "Welcome";
+        sound[] = {"\sounds\Welcome.ogg", 1, 1};
+        titles[] = {};
+    };
+
+    class medicSiren {
+        name = "medicSiren";
+        sound[] = {"\sounds\medicSiren.ogg", 1.0, 1};
+        titles[] = {};
+    };
+
+    class tazerSound {
+        name = "tazerSound";
+        sound[] = {"\sounds\tazer.ogg", 0.5, 1};
+        titles[] = {};
+    };
+
+    class flashbang {
+        name = "flashbang";
+        sound[] = {"\sounds\flashbang.ogg", 1.0, 1};
+        titles[] = {};
+    };
+
+    class mining {
+        name = "mining";
+        sound[] = {"\sounds\mining.ogg", 1.0, 1};
+        titles[] = {};
+    };
+
+    class harvest {
+        name = "harvest";
+        sound[] = {"\sounds\harvest.ogg", 1.0, 1};
+        titles[] = {};
+    };
+
+    class lockCarSound {
+        name = "lockCarSound";
+        sound[] = {"\sounds\carLock.ogg", 1.0, 1};
+        titles[] = {};
+    };
+
+    class unlockCarSound {
+        name = "unlockCarSound";
+        sound[] = {"\sounds\carUnlock.ogg", 0.75, 1};
+        titles[] = {};
+    };
+};
+
+
+class CfgDebriefing
+{  
+class eastwon
+{
+	title = "Cazador cazado! :D";
+	subtitle = "";
+	description = "El cazador has sido cazado por unos lindos paticos";
+};
+class eastlost
+{
+	title = "Habeis muerto todos :(";
+	subtitle = "";
+	description = "El maldito cazador se ha salido con la suya...";
+};
+class westlost
+{
+	title = "¡Cuak cuak motherfucker!";
+	subtitle = "";
+	description = "los paticos te han petado el ojal :(";
+};
+class westwon
+{
+	title = "Has ganado!";
+	subtitle = "";
+	description = "Has acabado con esos asquerosos patos";
+};
+class eastwon1
+{
+	title = "Cazador cazado!";
+	subtitle = "";
+	description = "El cazador ha sido cazado por un lindo patito";
+};
+class westwon1
+{
+	title = "El cazador ha ganado";
+	subtitle = "";
+	description = "El cazador ha acabado con esos asquerosos patos motorizados";
+};
+
+};

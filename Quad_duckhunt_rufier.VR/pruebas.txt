@@ -1,0 +1,36 @@
+_westCount = allPlayers select {side _x == west && alive _x};
+if (count _westCount == 0) then
+{
+	hint "dey dead";
+};
+
+_westCount = allPlayers select {side _x == west && alive _x};
+waitUntil {count _westCount == 0 };
+hint "tesssst!!!";
+
+
+
+_endGameThread = [] spawn {
+if (isServer) then {
+	while {true} do {
+		_westCount = allunits select {side _x == west && alive _x};
+                _eastCount = allunits select {side _x == east && alive _x};
+if (count _westCount == 0) then
+{
+	[ ["westlost", false, 2], "BIS_fnc_endMission", west, false] call BIS_fnc_MP; //fade to black
+			[ ["eastwon", true, true], "BIS_fnc_endMission", east, false] call BIS_fnc_MP;
+};
+
+if (count _eastCount == 0) then
+{
+	[ ["eastlost", false, 2], "BIS_fnc_endMission", west, false] call BIS_fnc_MP; //fade to black
+			[ ["westwon", true, true], "BIS_fnc_endMission", east, false] call BIS_fnc_MP; //signature shot
+};
+		};
+	};
+};
+
+
+https://forums.bohemia.net/forums/topic/219980-selecting-random-player-and-forcing-change-side/
+https://forums.bohemia.net/forums/topic/215887-format-hint-write-more-than-1-line/
+https://forums.bohemia.net/forums/topic/202470-release-spawn-a-vehicle-with-a-custom-texture/
